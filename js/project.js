@@ -29,10 +29,14 @@ function colorInput(div, isNew) {
         document.querySelector("#project-cancel-button-color").style.display = "none";
 
     }
+
+    document.querySelector("#project-color-preview").style.color = document.querySelector("#color-input-fg").value;
+    document.querySelector("#project-color-preview").style.backgroundColor = document.querySelector("#color-input-bg").value;
+
 }
 
 function closeColorInput() {
-    document.querySelector("#project-cancel-button-color").style.display = "none";
+    document.querySelector("#project-section-input-color").style.display = "none";
 }
 
 function submitColorInput() {
@@ -43,3 +47,11 @@ function deleteColorInput() {
     document.querySelector("#color-input-delete").value = "1";
     submitColorInput();
 }
+
+document.querySelector("#color-input-fg").addEventListener("change", function () {
+    document.querySelector("#project-color-preview").style.color = document.querySelector("#color-input-fg").value;
+})
+
+document.querySelector("#color-input-bg").addEventListener("change", function () {
+    document.querySelector("#project-color-preview").style.backgroundColor = document.querySelector("#color-input-bg").value;
+})

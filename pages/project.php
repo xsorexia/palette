@@ -21,7 +21,7 @@ $projectID = 1;
             <div id="project-body-bottom-left">
                 <div id="project-navbar">
                     <div class="project-navbar-item" onclick="scrollToDiv('project-section-color')"># Color</div>
-                    <div class="project-navbar-item" onclick="scrollToDiv('project-section-color')"># Fonts</div>
+                    <div class="project-navbar-item" onclick="scrollToDiv('project-section-font')"># Font</div>
                     <div class="project-navbar-item" onclick="scrollToDiv('project-section-color')"># Text Presets</div>
 
                 </div>
@@ -60,7 +60,64 @@ $projectID = 1;
                     <div class="project-section-input" id="project-section-input-color" style="display: none;">
                         <div class="project-section-preview">
                             <div class="project-section-item project-section-item-color">
-                                <div class="project-section-item-color-cat" style="background-color: orange; color: white;">
+                                <div id="project-color-preview" class="project-section-item-color-cat" style="background-color: orange; color: white;">
+                                    Palette
+                                </div>
+                            </div>
+                        </div>
+                        <form class="project-section-right" id="project-section-color-form" method="POST" action="/api/addColor.php">
+                            <input type="hidden" name="project-id" value="<?=$projectID?>">
+                            <input type="hidden" name="color-delete" id="color-input-delete" value="0">
+                            <input type="hidden" name="color-id" id="color-input-id" value="0">
+                            <input type="text" name="color-name" id="color-input-name" class="project-input-field" placeholder="Color Name">
+                            <input type="text" name="color-fg" id="color-input-fg" class="project-input-field" placeholder="Foreground Color">
+                            <input type="text" name="color-bg" id="color-input-bg" class="project-input-field" placeholder="Background Color">
+                            <div class="project-section-right-submit">
+                                <div class="project-submit-button" onclick="submitColorInput()">Save</div>
+                                <div class="project-cancel-button" id="project-cancel-button-color" onclick="deleteColorInput()">Delete</div>
+                                <div class="project-cancel-button" onclick="closeColorInput()">Cancel</div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <div class="project-section" id="project-section-font">
+                    <div class="project-section-list">
+                        <div class="project-section-title"># Font</div>
+                        <div class="project-section-item-list">
+                            <div class="project-section-item">
+                                <div class="project-section-item-desc" onclick="colorInput(this, true)">+ Add font</div>
+                            </div>
+                            <?php
+                                $colorQuery = $pdo->prepare("SELECT * FROM colors WHERE projectID = ?");
+                                $colorQuery -> execute([$projectID]);
+                                $colorRes = $colorQuery -> fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($colorRes as $row) {
+                                    $colorID = $row['colorID'];
+                                    $colorName = $row['colorName'];
+                                    $colorForeground = $row['foregroundColor'];
+                                    $colorBackground = $row['backgroundColor'];
+                                    echo "
+                                    <div class='project-section-item project-section-item-color'>
+                                        <div class='project-section-item-color-cat'  style='background-color: $colorBackground; color: $colorForeground;'>
+                                            Palette
+                                        </div>
+                                        <div class='project-section-item-desc' onclick='colorInput(this, false)' colorID='$colorID' colorName='$colorName' colorFg='$colorForeground' colorBg='$colorBackground'>$colorName</div>
+                                    </div>
+                                    ";
+                                }
+                            ?>
+
+
+                        </div>
+                    </div>
+                    <div class="project-section-input" id="project-section-input-color" style="display: none;">
+                        <div class="project-section-preview">
+                            <div class="project-section-item project-section-item-color">
+                                <div id="project-color-preview" class="project-section-item-color-cat" style="background-color: orange; color: white;">
                                     Palette
                                 </div>
                             </div>

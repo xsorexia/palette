@@ -3,6 +3,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/api/db.php';
 $pdo = db_pdo();
 
 if (isset($_POST['color-id']) and isset($_POST['color-name']) and isset($_POST['color-fg']) and isset($_POST['color-bg']) and isset($_POST['project-id'])) {
+    if ($_POST['color-fg'] == '') {
+        $colorFg = "black";
+    }
     if ($_POST['color-delete']) {
         $deleteQuery = $pdo->prepare("DELETE FROM colors WHERE colorID = ?");
         $deleteQuery->execute([$_POST['color-id']]);
