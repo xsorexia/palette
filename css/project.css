@@ -1,0 +1,171 @@
+@import url('/css/common.css');
+
+#project-body {
+    width: 100%;
+
+    #project-body-top {
+        padding: 30px 30px;
+        box-sizing: border-box;
+        width: calc(100% - 2 * 15px);
+        margin-left: 15px;
+        margin-top: 20px;
+        background-color: white;
+        border-radius: 15px;
+
+    }
+
+    #project-body-bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 15px 15px;
+        box-sizing: border-box;
+
+        #project-body-bottom-left {
+            width: 250px;
+            
+            #project-navbar {
+                width: 100%;
+                padding: 15px 15px;
+                background-color: white;
+                border-radius: 15px;
+                box-sizing: border-box;
+
+                .project-navbar-item {
+                    border-radius: 10px;
+                    padding: 10px 10px;
+                }
+
+                .project-navbar-item:hover {
+                    cursor: pointer;
+                    background-color: var(--themeColorExtraLight);
+                }
+            }
+
+        }
+
+        #project-body-bottom-right {
+            width: calc(100% - 250px - 15px);
+            margin-left: 15px;
+
+            .project-section {
+                box-sizing: border-box;
+                padding: 30px 30px;
+                background-color: white;
+                border-radius: 15px;
+
+                .project-section-title {
+                    font-weight: 500;
+                    font-size: 20px;
+                }
+
+                .project-section-list {
+                    .project-section-item-list {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 40px;
+
+                        padding: 30px 15px;
+                        padding-bottom: 0;
+                        box-sizing: border-box;
+                        .project-section-item {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            align-items: center;
+                            justify-content: center;
+
+                            padding: 15px 30px;
+                            border-radius: 10px;
+
+                            .project-section-item-desc {
+                                color: #00000090;
+                                font-size: 15px;
+
+
+                            }
+                        }
+
+                        .project-section-item:hover {
+                            background-color: var(--themeColorLight);
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+                .project-section-input {
+                    border-top: 1px solid #00000020;
+                    width: 100%;
+                    margin-top: 30px;
+                    padding-top: 30px;
+
+                    display: flex;
+                    flex-direction: row;
+                    gap: 30px;
+
+                    .project-section-preview {
+                        width: 250px;
+                        display: grid;
+                        place-items: center;
+                    }
+
+                    .project-section-right {
+                        width: calc(100% - 250px);
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .project-section-right-submit {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 10px;
+                            justify-content: end;
+
+                            div:hover {
+                                cursor: pointer;
+                                opacity: 0.7;
+                            }
+
+                            .project-submit-button {
+                                padding: 10px 30px;
+                                color: white;
+                                background-color: black;
+                                font-weight: 500;
+                                border-radius: 10px;
+                            }
+                            .project-cancel-button {
+                                padding: 10px 30px;
+                                color: black;
+                                background-color: var(--themeColorLight);
+                                font-weight: 500;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+
+            }
+            
+
+        }
+    }
+}
+
+.project-section-item-color-cat {
+    border: 1px solid #00000020;
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+}
+
+.project-input-field {
+    width: 100%;
+    background-color: var(--themeColor);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+}

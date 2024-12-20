@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --themeColor: #f3f3f8;
+    --themeColorLight: #f3f3f8c1;
+    --themeColorExtraLight: #f3f3f86b;
+}
+
+body {
+    margin: 0;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Urbanist', serif;
+    background-color: var(--themeColor);
+
+    display: flex;
+    flex-direction: row;
+}
