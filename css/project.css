@@ -9,7 +9,8 @@
         width: calc(100% - 2 * 15px);
         margin-left: 15px;
         margin-top: 20px;
-        background-color: white;
+        background-color: black;
+        color: white;
         border-radius: 15px;
 
     }

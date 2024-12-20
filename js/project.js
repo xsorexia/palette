@@ -19,14 +19,27 @@ function colorInput(div, isNew) {
         document.querySelector("#color-input-name").value = colorName;
         document.querySelector("#color-input-fg").value = colorFg;
         document.querySelector("#color-input-bg").value = colorBg;
+        document.querySelector("#project-cancel-button-color").style.display = "block";
+
     } else {
         document.querySelector("#color-input-id").value = "0";
         document.querySelector("#color-input-name").value = "";
         document.querySelector("#color-input-fg").value = "";
         document.querySelector("#color-input-bg").value = "";
+        document.querySelector("#project-cancel-button-color").style.display = "none";
+
     }
 }
 
 function closeColorInput() {
-    document.querySelector("#project-section-input-color").style.display = "none";
+    document.querySelector("#project-cancel-button-color").style.display = "none";
+}
+
+function submitColorInput() {
+    document.querySelector('#project-section-color-form').submit();
+}
+
+function deleteColorInput() {
+    document.querySelector("#color-input-delete").value = "1";
+    submitColorInput();
 }

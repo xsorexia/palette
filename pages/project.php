@@ -67,12 +67,14 @@ $projectID = 1;
                         </div>
                         <form class="project-section-right" id="project-section-color-form" method="POST" action="/api/addColor.php">
                             <input type="hidden" name="project-id" value="<?=$projectID?>">
+                            <input type="hidden" name="color-delete" id="color-input-delete" value="0">
                             <input type="hidden" name="color-id" id="color-input-id" value="0">
                             <input type="text" name="color-name" id="color-input-name" class="project-input-field" placeholder="Color Name">
                             <input type="text" name="color-fg" id="color-input-fg" class="project-input-field" placeholder="Foreground Color">
                             <input type="text" name="color-bg" id="color-input-bg" class="project-input-field" placeholder="Background Color">
                             <div class="project-section-right-submit">
-                                <div class="project-submit-button" onclick="document.querySelector('#project-section-color-form').submit();">Save</div>
+                                <div class="project-submit-button" onclick="submitColorInput()">Save</div>
+                                <div class="project-cancel-button" id="project-cancel-button-color" onclick="deleteColorInput()">Delete</div>
                                 <div class="project-cancel-button" onclick="closeColorInput()">Cancel</div>
 
                             </div>
