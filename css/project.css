@@ -8,10 +8,61 @@
         box-sizing: border-box;
         width: calc(100% - 2 * 15px);
         margin-left: 15px;
-        margin-top: 20px;
-        background-color: black;
+        margin-top: 30px;
+        background-color: rgba(0, 0, 0, 0.849);
         color: white;
         border-radius: 15px;
+        min-height: 200px;
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        #project-body-top-info {
+            padding-left: 15px;
+
+            #project-body-top-info-title {
+                font-weight: 500;
+                font-size: 32px;
+            }
+
+            #project-body-top-info-desc {
+                margin-top: 10px;
+            }
+        }
+
+        #project-body-top-options {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            width: calc(100% - 2 * 30px);
+            gap: 10px;
+
+            div {
+                padding: 10px 30px;
+                font-weight: 500;
+                border-radius: 10px;
+            }
+
+            .project-genCss-button {
+                color: black;
+                background-color: white;
+            }
+
+            .project-exit-button {
+                color: white;
+                background-color: black;
+            }
+
+            div:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
 
     }
 
@@ -70,12 +121,15 @@
                         padding: 30px 15px;
                         padding-bottom: 0;
                         box-sizing: border-box;
+
+                        overflow-x:auto;
                         .project-section-item {
                             display: flex;
                             flex-direction: column;
                             gap: 10px;
                             align-items: center;
                             justify-content: center;
+                            min-width: 100px;
 
                             padding: 15px 30px;
                             border-radius: 10px;
@@ -83,7 +137,7 @@
                             .project-section-item-desc {
                                 color: #00000090;
                                 font-size: 15px;
-
+                                text-align: center;
 
                             }
                         }
@@ -163,6 +217,9 @@
     place-items: center;
 }
 
+.project-section-item-font-cat, .project-section-item-preset-cat {
+    text-align: center;
+}
 .project-input-field {
     width: 100%;
     background-color: var(--themeColor);

@@ -17,6 +17,5 @@ body {
     font-family: 'Urbanist', serif;
     background-color: var(--themeColor);
 
-    display: flex;
-    flex-direction: row;
 }
+

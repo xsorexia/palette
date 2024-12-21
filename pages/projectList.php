@@ -6,9 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    Hello world! Testing if this works
-    <script>
-        window.location.href = '/pages/project.php?projectID=1'
-    </script>
+    ㅠㅠ this page is empty
+    <a href="/index.html">go back!!!!</a>
 </body>
 </html>
